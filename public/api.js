@@ -1,11 +1,33 @@
+let images = {
+    '宜蘭縣':'https://braunvilla.com/assets/images/activity-1.jpg',
+    '花蓮縣':'https://e.share.photo.xuite.net/hideki_j13/1ee3477/20432130/1224786805_x.jpg',
+    '臺東縣':'https://tour.taitung.gov.tw/image/23681/1024x768',
+    '澎湖縣':'https://www.penghu-nsa.gov.tw/FileDownload/TravelInformation/Big/20140814171704737.jpg',
+    '金門縣':'https://kuolife.com/wp-content/uploads/2021/03/c23b7a26378726051e5cc566899377798_62745916_210324_23.jpg',
+    '連江縣':'https://www.matsu-nsa.gov.tw/FileArtPic.ashx?id=2834&w=1280&h=960',
+    '臺北市':'https://image.cdn-eztravel.com.tw/vOyaHzcdInTcEr2C-Q0XFK8fMuUfJpzotD-h5Y3wQBQ/g:ce/aHR0cHM6Ly92YWNhdGlvbi5jZG4tZXp0cmF2ZWwuY29tLnR3L3BvaS90dy9UUEUvVGFpcGVpIDEwMS9zaHV0dGVyc3RvY2tfMjE1MTMzMDcwLmpwZw.jpg',
+    '新北市':'https://newtaipei.travel/content/images/attractions/27525/1920x1080_attractions-image-fwfaxumoiegq42wwkiwkpg.jpg',
+    '桃園市':'https://travel.tycg.gov.tw/content/images/attractions/69988/1024x768_attractions-image-zrmq1aelzu2yglwa8ykmsq.jpg',
+    '臺中市':'http://www.hotelkuei.com.tw/upload/fac_b/tw_fac_list_19a29_jzt9fk8rw6.jpg',
+    '高雄市':'https://www.85skyinn.com/upfile/20200901151721-155.jpg',
+    '基隆市':'https://www.mirrormedia.com.tw/assets/images/20200716111500-6d47efbe6ba4c5183c1989c3d7d9be16-mobile.jpg',
+    '新竹縣':'http://jerryimage.com/wp-content/uploads/20220104221355_52-1536x1004.jpg',
+    '新竹市':'https://taiwan.sharelife.tw/tw-feat-pres-img/50958/4212271020341316.jpg',
+    '苗栗縣':'https://f.share.photo.xuite.net/lsg2006/1fff97d/20375925/1196635400_x.jpg',
+    '彰化縣':'https://imgcdn.cna.com.tw/www/WebPhotos/1024/20201027/1151x768_20201027000137.jpg',
+    '南投縣':'https://pic.pimg.tw/anrine910070/1645444867-25636759-g.jpg',
+    '雲林縣':'https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-08/4480a1b0-dc70-11ea-bfdf-b698ef096cd1',
+    '嘉義縣':'https://www.ali-nsa.net/zh-tw/content/images/static/ali-img-2-md.jpg',
+    '嘉義市':'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cloudy_sky_over_Lantan_Lake.jpg/1280px-Cloudy_sky_over_Lantan_Lake.jpg',
+    '屏東縣':'https://www.dbnsa.gov.tw/att/pic/b_11005774.jpg',
+}
+
 async function getWeatherData(locationName){
     let url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-089?Authorization=CWB-7118B202-1151-43E8-BE84-EBA964198849&format=JSON&locationName=${locationName}`;
     try{
         let res = await fetch(url);
         let data = await res.json();
         let raw = data.records.locations[0].location[0]
-
-        console.log(data);
 
         let location = raw.locationName;
         let pop = raw.weatherElement[0].time[0].elementValue[0].value;
@@ -17,6 +39,7 @@ async function getWeatherData(locationName){
         let weatherDescription = raw.weatherElement[6].time[0].elementValue[0].value;
         let ws = raw.weatherElement[8].time[0].elementValue[0].value;
         let wd = raw.weatherElement[9].time[0].elementValue[0].value;
+        let image = images[locationName];
 
         let finalData = {
             'location':location,
@@ -29,7 +52,8 @@ async function getWeatherData(locationName){
                 'comfortIndex':ci,
                 'weatherDescription':weatherDescription,
                 'windSpeed':ws,
-                'windDirection':wd
+                'windDirection':wd,
+                'image':image
             }
         }
         return finalData
