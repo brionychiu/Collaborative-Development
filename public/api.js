@@ -1,5 +1,3 @@
-// let locationName = "新北市";
-
 async function getWeatherData(locationName){
     let url = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-089?Authorization=CWB-7118B202-1151-43E8-BE84-EBA964198849&format=JSON&locationName=${locationName}`;
     try{
@@ -39,5 +37,3 @@ async function getWeatherData(locationName){
         console.log('Error:', error);
     }
 }
-
-getWeatherData('宜蘭縣')
