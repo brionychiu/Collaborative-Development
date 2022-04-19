@@ -59,9 +59,8 @@ main {
   justify-items: center;
   align-items: center;
   padding: 10px;
-  background-color: #fdf6ec;
+  background-color: rgba(253, 246, 236, 0.8);
   border-radius: 8px;
-  opacity: 0.8;
 }
 .day1:hover {
   transform: translateY(3px);
