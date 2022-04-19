@@ -61,6 +61,7 @@ main {
   padding: 10px;
   background-color: #fdf6ec;
   border-radius: 8px;
+  opacity: 0.8;
 }
 .day1:hover {
   transform: translateY(3px);
