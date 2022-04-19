@@ -6,10 +6,11 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&amp;display=swap" rel="stylesheet">
     <title>team5-台灣縣市兩日天氣預報</title>
     <link rel="stylesheet" type="text/css" href="./public/style.css" media="all" />
+    <script defer type="module" src="./public/js/index.js"></script>
     
 </head>
 <body>
-    <div class="backgroud_cover"><img src="./public/Images/cloudy-sunny.png"/></div>
+    <div class="background_cover"></div>
     <!--  這裡要放背景圖片，可用js動態載入  -->
     <header>
         <div class="search_bar">
@@ -50,11 +51,11 @@
           </select>
     </header>
     <main>
-        <div class="day1">
+        <!-- <div class="day1">
             <div class="date">2022-04-18</div>
-            <div class="weather_img"><img src="./public/Images/sun.png"/></div>
+            <div class="weather_img"><img src="./public/Images/sun.png"/></div> -->
             <!-- 這邊需要判斷圖片 -->
-            <div class="now_temp">溫度：24°C</div>
+            <!-- <div class="now_temp">溫度：24°C</div>
             <div class="temp">
                 <span class="low_temp">
                     <img src="./public/Images/low-temperature.png"/>
@@ -65,10 +66,9 @@
                 </span>
             </div>
             <div class="humidity">濕度：40%></div>
-            <div class="chance_rain">降雨機率：25%</div>
+            <div class="chance_rain">降雨機率：25%</div> -->
         </div> 
         <!-- 上面的變數，從js fetch -->
     </main>
 </body>
-<script src="./public/style.js"></script>
 </html>
