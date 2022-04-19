@@ -36,11 +36,13 @@ let images = {
     "https://travel.tycg.gov.tw/content/images/attractions/69988/1024x768_attractions-image-zrmq1aelzu2yglwa8ykmsq.jpg",
   臺中市:
     "http://www.hotelkuei.com.tw/upload/fac_b/tw_fac_list_19a29_jzt9fk8rw6.jpg",
+  臺南市:
+    "https://pic.pimg.tw/anrine910070/1604132665-3940537103-g.jpg",
   高雄市: "https://www.85skyinn.com/upfile/20200901151721-155.jpg",
   基隆市:
     "https://www.mirrormedia.com.tw/assets/images/20200716111500-6d47efbe6ba4c5183c1989c3d7d9be16-mobile.jpg",
   新竹縣:
-    "http://jerryimage.com/wp-content/uploads/20220104221355_52-1536x1004.jpg",
+    "https://image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fstorage.googleapis.com%2Fsmiletaiwan-cms-cwg-tw%2Farticle%2F201805%2Farticle-5af42aa14d227.jpg/?w=1366&format=webp",
   新竹市:
     "https://taiwan.sharelife.tw/tw-feat-pres-img/50958/4212271020341316.jpg",
   苗栗縣:
