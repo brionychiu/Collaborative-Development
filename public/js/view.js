@@ -13,16 +13,14 @@ class mainView {
   }
 
   _getWeatherImg(weather) {
-    switch (weather) {
-      case "多雲":
-      case "陰":
-        return "./public/Images/cloudy-sunny.png";
-      case "短暫雨":
-        return "./public/Images/cloudy-rainy.png";
-      case "雷陣雨":
-        return "./public/Images/storm.png";
-      default:
-        return "./public/Images/sun.png";
+    if (weather.includes("雷")) {
+      return "./public/Images/storm.png";
+    } else if (weather.includes("雨")) {
+      return "./public/Images/cloudy-rainy.png";
+    } else if (weather.includes("陰") || weather.includes("多雲")) {
+      return "./public/Images/cloudy-sunny.png";
+    } else {
+      return "./public/Images/sun.png";
     }
   }
 
@@ -40,7 +38,7 @@ class mainView {
           </div>
           <div class="humidity">濕度：${data.weatherToday.relativeHumidity}%</div>
           <div class="chance_rain">降雨機率：${data.weatherToday.probabilityOfPrecipitation}%</div>
-        </div> 
+        </div>
     `;
   }
 
