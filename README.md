@@ -4,7 +4,7 @@
 
 Github Name   |Development Content 開發內容
 --------------|-------------------------------
-SsuJ-Chang    |Api Data Collation  Api 數據整理
+SsuJ-Chang    |Api Data Collation  Api數據整理
 joanncheng    |Dynamic Webpage     動態網頁生成
 brionychiu    |Static Webpage      靜態網頁生成
 Bala-Chen     |Integrate           專案整合     
