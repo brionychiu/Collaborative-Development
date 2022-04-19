@@ -1,3 +1,8 @@
+let todayDate = new Date();
+let today = todayDate.getFullYear() + '-' + String(todayDate.getMonth()+1).padStart(2, '0') + '-'+ todayDate.getDate();
+let tomorrow = todayDate.getFullYear() + '-' + String(todayDate.getMonth()+1).padStart(2, '0') + '-'+ (todayDate.getDate()+1);
+let afterTomorrow = todayDate.getFullYear() + '-' + String(todayDate.getMonth()+1).padStart(2, '0') + '-'+ (todayDate.getDate()+2);
+
 let images = {
     '宜蘭縣':'https://braunvilla.com/assets/images/activity-1.jpg',
     '花蓮縣':'https://e.share.photo.xuite.net/hideki_j13/1ee3477/20432130/1224786805_x.jpg',
@@ -30,6 +35,8 @@ async function getWeatherData(locationName){
         let raw = data.records.locations[0].location[0]
 
         let location = raw.locationName;
+        let image = images[locationName];
+        // 今天氣象
         let pop = raw.weatherElement[0].time[0].elementValue[0].value;
         let wx = raw.weatherElement[1].time[0].elementValue[0].value;
         let at = raw.weatherElement[2].time[0].elementValue[0].value;
@@ -39,11 +46,32 @@ async function getWeatherData(locationName){
         let weatherDescription = raw.weatherElement[6].time[0].elementValue[0].value;
         let ws = raw.weatherElement[8].time[0].elementValue[0].value;
         let wd = raw.weatherElement[9].time[0].elementValue[0].value;
-        let image = images[locationName];
+        // 明天氣象
+        let pop2 = raw.weatherElement[0].time.find( i => i.startTime.includes(tomorrow)).elementValue[0].value;
+        let wx2 = raw.weatherElement[1].time.find( i => i.startTime.includes(tomorrow)).elementValue[0].value;
+        let at2 = raw.weatherElement[2].time.find( i => i.dataTime.includes(tomorrow)).elementValue[0].value;
+        let t2 = raw.weatherElement[3].time.find( i => i.dataTime.includes(tomorrow)).elementValue[0].value;
+        let rh2 = raw.weatherElement[4].time.find( i => i.dataTime.includes(tomorrow)).elementValue[0].value;
+        let ci2 = raw.weatherElement[5].time.find( i => i.dataTime.includes(tomorrow)).elementValue[1].value;
+        let weatherDescription2 = raw.weatherElement[6].time.find( i => i.startTime.includes(tomorrow)).elementValue[0].value;
+        let ws2 = raw.weatherElement[8].time.find( i => i.dataTime.includes(tomorrow)).elementValue[0].value;
+        let wd2 = raw.weatherElement[9].time.find( i => i.dataTime.includes(tomorrow)).elementValue[0].value;
+        // 後天氣象
+        let pop3 = raw.weatherElement[0].time.find( i => i.startTime.includes(afterTomorrow)).elementValue[0].value;
+        let wx3 = raw.weatherElement[1].time.find( i => i.startTime.includes(afterTomorrow)).elementValue[0].value;
+        let at3 = raw.weatherElement[2].time.find( i => i.dataTime.includes(afterTomorrow)).elementValue[0].value;
+        let t3 = raw.weatherElement[3].time.find( i => i.dataTime.includes(afterTomorrow)).elementValue[0].value;
+        let rh3 = raw.weatherElement[4].time.find( i => i.dataTime.includes(afterTomorrow)).elementValue[0].value;
+        let ci3 = raw.weatherElement[5].time.find( i => i.dataTime.includes(afterTomorrow)).elementValue[1].value;
+        let weatherDescription3 = raw.weatherElement[6].time.find( i => i.startTime.includes(afterTomorrow)).elementValue[0].value;
+        let ws3 = raw.weatherElement[8].time.find( i => i.dataTime.includes(afterTomorrow)).elementValue[0].value;
+        let wd3 = raw.weatherElement[9].time.find( i => i.dataTime.includes(afterTomorrow)).elementValue[0].value;
 
         let finalData = {
             'location':location,
-            'weather':{
+            'image':image,
+            'weatherToday':{
+                'date': today,
                 'probabilityOfPrecipitation':pop,
                 'weatherExpression':wx,
                 'apparentTemperature':at,
@@ -52,8 +80,31 @@ async function getWeatherData(locationName){
                 'comfortIndex':ci,
                 'weatherDescription':weatherDescription,
                 'windSpeed':ws,
-                'windDirection':wd,
-                'image':image
+                'windDirection':wd
+            },
+            'weatherTomorrow':{
+                'date': tomorrow,
+                'probabilityOfPrecipitation':pop2,
+                'weatherExpression':wx2,
+                'apparentTemperature':at2,
+                'temperature':t2,
+                'relativeHumidity':rh2,
+                'comfortIndex':ci2,
+                'weatherDescription':weatherDescription2,
+                'windSpeed':ws2,
+                'windDirection':wd2
+            },
+            'weatherAfterTormorrow':{
+                'date': afterTomorrow,
+                'probabilityOfPrecipitation':pop3,
+                'weatherExpression':wx3,
+                'apparentTemperature':at3,
+                'temperature':t3,
+                'relativeHumidity':rh3,
+                'comfortIndex':ci3,
+                'weatherDescription':weatherDescription3,
+                'windSpeed':ws3,
+                'windDirection':wd3
             }
         }
         return finalData
