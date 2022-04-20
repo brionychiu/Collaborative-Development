@@ -8,6 +8,8 @@ body {
   display: grid;
   grid-template-rows: 180px 2fr;
   letter-spacing: 2px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .background_cover {
   width: 100vw;
