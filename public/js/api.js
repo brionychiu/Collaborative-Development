@@ -33,7 +33,7 @@ let images = {
   新北市:
     "https://newtaipei.travel/content/images/attractions/27525/1920x1080_attractions-image-fwfaxumoiegq42wwkiwkpg.jpg",
   桃園市:
-    "https://travel.tycg.gov.tw/content/images/attractions/69988/1024x768_attractions-image-zrmq1aelzu2yglwa8ykmsq.jpg",
+    "https://web.taoyuan-airport.com/api/imagecrop/coverImage/186FED37-A05C-EC11-80F4-000C29A1B907",
   臺中市:
     "http://www.hotelkuei.com.tw/upload/fac_b/tw_fac_list_19a29_jzt9fk8rw6.jpg",
   臺南市:
