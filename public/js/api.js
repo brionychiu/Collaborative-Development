@@ -163,7 +163,7 @@ export async function getWeatherData(locationName) {
         windSpeed: ws2,
         windDirection: wd2,
       },
-      weatherAfterTormorrow: {
+      weatherAfterTomorrow: {
         date: afterTomorrow,
         probabilityOfPrecipitation: pop3,
         weatherExpression: wx3,
