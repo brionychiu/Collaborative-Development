@@ -8,8 +8,8 @@ body {
   display: grid;
   grid-template-rows: 180px 2fr;
   letter-spacing: 2px;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
 }
 .background_cover {
   width: 100vw;
@@ -20,7 +20,9 @@ body {
 .background_cover > img {
   width: 100%;
   height: 100%;
-  object-fit: cover
+  object-fit: cover;
+  display:block; 
+  /* 助教說 img是inline元素 所以會在高度上留空白 設成block就不會有scroll bar */
 }
 header {
   grid-row: 1/2;
