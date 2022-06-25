@@ -11,6 +11,8 @@ Bala-Chen     |Integrate           專案整合
 
 * [討論過程](https://excalidraw.com/#room=d2365a151940605f62ed,mUS6RL2o87DxXZdvAi1mxw)
 * [網頁成果](https://bala-chen.github.io/Collaborative-Development/)
+![image](https://user-images.githubusercontent.com/94620926/175781442-0f6d548d-900c-49c7-b606-ab33c2debea5.png)
+
 * [ppt](https://drive.google.com/file/d/1jw7j9a7nFQQnJPO1jPYVERF09i9HP_fF/view?usp=sharing)
 
 ### Contact
